@@ -1,0 +1,18 @@
+Start testing: Dec 15 14:57 CST
+----------------------------------------------------------
+1/1 Testing: PolishSystemTests
+1/1 Test: PolishSystemTests
+Command: "/Users/bhorowitz/Desktop/PolishSystem/build/PolishSystemTests"
+Directory: /Users/bhorowitz/Desktop/PolishSystem/build
+"PolishSystemTests" start time: Dec 15 14:57 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.25 sec
+----------------------------------------------------------
+Test Passed.
+"PolishSystemTests" end time: Dec 15 14:57 CST
+"PolishSystemTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 15 14:57 CST
