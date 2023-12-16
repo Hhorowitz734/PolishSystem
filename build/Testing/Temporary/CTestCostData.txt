@@ -1,4 +1,0 @@
-century_test 6 0.000627535
-decade_test 10 0.000272417
-year_test 15 0.00743535
----
