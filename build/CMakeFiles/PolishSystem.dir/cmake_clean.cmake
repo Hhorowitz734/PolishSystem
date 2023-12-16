@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/PolishSystem.dir/src/century.cpp.o"
+  "CMakeFiles/PolishSystem.dir/src/century.cpp.o.d"
   "CMakeFiles/PolishSystem.dir/src/decade.cpp.o"
   "CMakeFiles/PolishSystem.dir/src/decade.cpp.o.d"
   "CMakeFiles/PolishSystem.dir/src/main.cpp.o"

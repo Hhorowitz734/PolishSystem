@@ -69,10 +69,24 @@ include CMakeFiles/PolishSystem.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/PolishSystem.dir/flags.make
 
+CMakeFiles/PolishSystem.dir/src/century.cpp.o: CMakeFiles/PolishSystem.dir/flags.make
+CMakeFiles/PolishSystem.dir/src/century.cpp.o: /Users/bhorowitz/Desktop/PolishSystem/src/century.cpp
+CMakeFiles/PolishSystem.dir/src/century.cpp.o: CMakeFiles/PolishSystem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bhorowitz/Desktop/PolishSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PolishSystem.dir/src/century.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PolishSystem.dir/src/century.cpp.o -MF CMakeFiles/PolishSystem.dir/src/century.cpp.o.d -o CMakeFiles/PolishSystem.dir/src/century.cpp.o -c /Users/bhorowitz/Desktop/PolishSystem/src/century.cpp
+
+CMakeFiles/PolishSystem.dir/src/century.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PolishSystem.dir/src/century.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bhorowitz/Desktop/PolishSystem/src/century.cpp > CMakeFiles/PolishSystem.dir/src/century.cpp.i
+
+CMakeFiles/PolishSystem.dir/src/century.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PolishSystem.dir/src/century.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bhorowitz/Desktop/PolishSystem/src/century.cpp -o CMakeFiles/PolishSystem.dir/src/century.cpp.s
+
 CMakeFiles/PolishSystem.dir/src/decade.cpp.o: CMakeFiles/PolishSystem.dir/flags.make
 CMakeFiles/PolishSystem.dir/src/decade.cpp.o: /Users/bhorowitz/Desktop/PolishSystem/src/decade.cpp
 CMakeFiles/PolishSystem.dir/src/decade.cpp.o: CMakeFiles/PolishSystem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bhorowitz/Desktop/PolishSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PolishSystem.dir/src/decade.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bhorowitz/Desktop/PolishSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PolishSystem.dir/src/decade.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PolishSystem.dir/src/decade.cpp.o -MF CMakeFiles/PolishSystem.dir/src/decade.cpp.o.d -o CMakeFiles/PolishSystem.dir/src/decade.cpp.o -c /Users/bhorowitz/Desktop/PolishSystem/src/decade.cpp
 
 CMakeFiles/PolishSystem.dir/src/decade.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/PolishSystem.dir/src/decade.cpp.s: cmake_force
 CMakeFiles/PolishSystem.dir/src/main.cpp.o: CMakeFiles/PolishSystem.dir/flags.make
 CMakeFiles/PolishSystem.dir/src/main.cpp.o: /Users/bhorowitz/Desktop/PolishSystem/src/main.cpp
 CMakeFiles/PolishSystem.dir/src/main.cpp.o: CMakeFiles/PolishSystem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bhorowitz/Desktop/PolishSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PolishSystem.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bhorowitz/Desktop/PolishSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PolishSystem.dir/src/main.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PolishSystem.dir/src/main.cpp.o -MF CMakeFiles/PolishSystem.dir/src/main.cpp.o.d -o CMakeFiles/PolishSystem.dir/src/main.cpp.o -c /Users/bhorowitz/Desktop/PolishSystem/src/main.cpp
 
 CMakeFiles/PolishSystem.dir/src/main.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/PolishSystem.dir/src/main.cpp.s: cmake_force
 CMakeFiles/PolishSystem.dir/src/year.cpp.o: CMakeFiles/PolishSystem.dir/flags.make
 CMakeFiles/PolishSystem.dir/src/year.cpp.o: /Users/bhorowitz/Desktop/PolishSystem/src/year.cpp
 CMakeFiles/PolishSystem.dir/src/year.cpp.o: CMakeFiles/PolishSystem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bhorowitz/Desktop/PolishSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PolishSystem.dir/src/year.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/bhorowitz/Desktop/PolishSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PolishSystem.dir/src/year.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PolishSystem.dir/src/year.cpp.o -MF CMakeFiles/PolishSystem.dir/src/year.cpp.o.d -o CMakeFiles/PolishSystem.dir/src/year.cpp.o -c /Users/bhorowitz/Desktop/PolishSystem/src/year.cpp
 
 CMakeFiles/PolishSystem.dir/src/year.cpp.i: cmake_force
@@ -113,6 +127,7 @@ CMakeFiles/PolishSystem.dir/src/year.cpp.s: cmake_force
 
 # Object files for target PolishSystem
 PolishSystem_OBJECTS = \
+"CMakeFiles/PolishSystem.dir/src/century.cpp.o" \
 "CMakeFiles/PolishSystem.dir/src/decade.cpp.o" \
 "CMakeFiles/PolishSystem.dir/src/main.cpp.o" \
 "CMakeFiles/PolishSystem.dir/src/year.cpp.o"
@@ -120,13 +135,13 @@ PolishSystem_OBJECTS = \
 # External object files for target PolishSystem
 PolishSystem_EXTERNAL_OBJECTS =
 
+PolishSystem: CMakeFiles/PolishSystem.dir/src/century.cpp.o
 PolishSystem: CMakeFiles/PolishSystem.dir/src/decade.cpp.o
 PolishSystem: CMakeFiles/PolishSystem.dir/src/main.cpp.o
 PolishSystem: CMakeFiles/PolishSystem.dir/src/year.cpp.o
 PolishSystem: CMakeFiles/PolishSystem.dir/build.make
-PolishSystem: libPolishSystemLib.a
 PolishSystem: CMakeFiles/PolishSystem.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/bhorowitz/Desktop/PolishSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable PolishSystem"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/bhorowitz/Desktop/PolishSystem/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable PolishSystem"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PolishSystem.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
