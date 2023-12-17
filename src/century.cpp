@@ -1,14 +1,21 @@
+//Include Times
 #include "../include/ITime.h"
 #include "../include/century.h"
 #include "../include/decade.h"
 #include "../include/year.h"
 
+//Libraries
 #include "raylib.h"
+
+//Settings Setup
+#include "../include/Settings.h"
+
+Settings& settings = Settings::GetInstance();
 
 //Constructors
 
 Century::Century(int century, bool using_century)
-    : ITime(100, 100, 100, 100) {
+    : ITime(settings.getCenturyX(), settings.getCenturyY(), settings.getCenturyWidth(), settings.getCenturyHeight()) {
 
     for (int i = (century - 1) * 100; i < century * 100; i += 10) {
         Decade curr_decade(i);

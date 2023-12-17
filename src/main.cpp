@@ -26,11 +26,16 @@ int main() {
     // Set FPS
     SetTargetFPS(60);
 
+    //OBJECTS
+    Century y2k(2000);
+
     // Main game loop
     while (!WindowShouldClose()) { 
 
         // Start Drawing
         BeginDrawing();
+
+        y2k.display();
 
         ClearBackground(BLACK);
 
