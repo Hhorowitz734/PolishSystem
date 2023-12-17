@@ -3,9 +3,13 @@
 #include "../include/decade.h"
 #include "../include/year.h"
 
+#include "raylib.h"
+
 //Constructors
 
-Century::Century(int century, bool using_century) {
+Century::Century(int century, bool using_century)
+    : ITime(100, 100, 100, 100) {
+
     for (int i = (century - 1) * 100; i < century * 100; i += 10) {
         Decade curr_decade(i);
 

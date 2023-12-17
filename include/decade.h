@@ -38,6 +38,13 @@ public:
     */
     ~Decade() = default;
 
+    /**
+     * @brief Returns an array of ITime pointers to Year objects
+     * 
+     * @returns The array of pointers to Year objects
+     * You must keep in mind that this returns POINTERS rather than by reference
+     * So please manage this properly in the future
+    */
     std::vector<ITime*> getSubTime() const override;
 
 

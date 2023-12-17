@@ -27,6 +27,11 @@ public:
     */
     ~Year() = default;
 
+    /**
+     * @brief Returns an empty array. Function must be implemented for interface
+     * 
+     * @returns An empty array of ITime* type
+    */
     std::vector<ITime*> getSubTime() const override;
 
 

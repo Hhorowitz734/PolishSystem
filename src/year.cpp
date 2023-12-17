@@ -4,7 +4,7 @@
 
 //Constructors
 
-Year::Year(int year) : year(year) {}
+Year::Year(int year) : year(year), ITime(1, 1, 1, 1) {}
 
 //Getter Methods
 

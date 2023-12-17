@@ -23,24 +23,31 @@ public:
      * 
      * @param start_year The start year of the century
     */
-   Century(int start_year);
+    Century(int start_year);
 
-   /**
-    * @brief Getter method for decades vector
-    * 
-    * @returns The array of Decade items in the century
-   */
-  std::vector<Decade> getDecades();
+    /**
+        * @brief Getter method for decades vector
+        * 
+        * @returns The array of Decade items in the century
+    */
+    std::vector<Decade> getDecades();
 
-  /**
-   * @brief Getter method fro years vector
-   * 
-   * @returns The array of Year items in the century
-  */
- std::vector<Year> getYears();
+    /**
+     * @brief Getter method fro years vector
+     * 
+     * @returns The array of Year items in the century
+     */
+    std::vector<Year> getYears();
 
-
- std::vector<ITime*> getSubTime() const override;
+    /**
+     * @brief Returns an array of ITime pointers to Decade objects
+     * 
+     * @returns The array of pointers to Decade objects
+     * 
+     * You must keep in mind that this returns POINTERS rather than by reference
+     * So please manage this properly in the future
+    */
+    std::vector<ITime*> getSubTime() const override;
 
 private:
     std::vector<Decade> decades;
