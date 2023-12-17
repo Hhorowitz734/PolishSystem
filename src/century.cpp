@@ -25,14 +25,21 @@ Century::Century(int century, bool using_century)
         Decade* curr_decade = new Decade(i);
 
         //Sets decade position properly
-        curr_decade->setY(Settings::GetInstance().getDecadeHeight() * num_iters + Settings::GetInstance().getDecadeY());
+        curr_decade->setY(Settings::GetInstance().getDecadeHeight() * num_iters + Settings::GetInstance().getDecadeY() + 1);
         
         // Add the decade to the decades vector
         decades.push_back(curr_decade);
 
         // Add individual years to the years vector
         std::vector<Year*> curr_decade_years = curr_decade->getYears();
-        years.insert(years.end(), curr_decade_years.begin(), curr_decade_years.end());
+        
+        // Sets proper positions for all years
+        for (int j = 0; j < 10; j++){
+            curr_decade_years[j]->setX(Settings::GetInstance().getYearX() + Settings::GetInstance().getYearWidth() * j + 1);
+            curr_decade_years[j]->setY(Settings::GetInstance().getDecadeHeight() * num_iters + Settings::GetInstance().getDecadeY() + 2);
+
+            years.push_back(curr_decade_years[j]);
+        }
 
 
         num_iters++;

@@ -8,12 +8,13 @@ enable_testing()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Manually specify the include directory for raylib
+# Manually specify the include directories
 include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(/opt/homebrew/Cellar/raylib/4.5.0/include)
+include_directories(${PROJECT_SOURCE_DIR}/include/panel) # Include the panel headers
 
-# Add all .cpp files in the src directory for the main application
-file(GLOB MAIN_SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
+# Add all .cpp files in the src directory and src/panel directory for the main application
+file(GLOB MAIN_SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp" "${PROJECT_SOURCE_DIR}/src/panel/*.cpp")
 
 # Define the main application executable
 add_executable(PolishSystem ${MAIN_SOURCES})
@@ -31,14 +32,15 @@ target_link_libraries(PolishSystem ${RAYLIB_LIBRARY})
 # Assuming Google Test is installed and findable by CMake
 find_package(GTest REQUIRED)
 
-file(GLOB MAIN_SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
-list(REMOVE_ITEM MAIN_SOURCES "${PROJECT_SOURCE_DIR}/src/main.cpp")  # Exclude main.cpp from MAIN_SOURCES
+# Exclude main.cpp from MAIN_SOURCES
+file(GLOB PANEL_SOURCES "${PROJECT_SOURCE_DIR}/src/panel/*.cpp")
+list(REMOVE_ITEM MAIN_SOURCES "${PROJECT_SOURCE_DIR}/src/main.cpp")
 
 file(GLOB TEST_FILES "${PROJECT_SOURCE_DIR}/tests/*.cpp")
 
 foreach(TEST_FILE ${TEST_FILES})
     get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
-    add_executable(${TEST_NAME} ${TEST_FILE} ${MAIN_SOURCES})
+    add_executable(${TEST_NAME} ${TEST_FILE} ${MAIN_SOURCES} ${PANEL_SOURCES})
     target_link_libraries(${TEST_NAME} GTest::GTest GTest::Main ${RAYLIB_LIBRARY}) # Link raylib here
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
 endforeach()

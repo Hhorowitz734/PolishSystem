@@ -4,6 +4,9 @@
 #include "../include/year.h"
 #include "../include/century.h"
 
+//Panel Headers
+#include "../include/panel/colorselector.h"
+
 //C++ Tools
 #include <vector>
 #include <iostream>
@@ -30,6 +33,9 @@ int main() {
     // FACTORIES + OBJECTS
     Century y2k(2000);
 
+    //SIDE PANEL
+    ColorSelector usa(RED, "America");
+
 
     // Main game loop
     while (!WindowShouldClose()) { 
@@ -38,6 +44,7 @@ int main() {
         BeginDrawing();
 
         y2k.display();
+        usa.display();
 
         ClearBackground(BLACK);
 
