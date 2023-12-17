@@ -44,11 +44,12 @@ TEST_F(SettingsTest, CheckDecadeGetters) {
 TEST_F(SettingsTest, CheckYearGetters) {
 
     ASSERT_EQ(settings.getYearWidth(), (settings.getCenturyWidth() - 10) / 10);
-    ASSERT_EQ(settings.getYearHeight(), settings.getDecadeHeight() - 2);
-    ASSERT_EQ(settings.getYearX(), settings.getCenturyX() + 1);
-    ASSERT_EQ(settings.getYearY(), settings.getDecadeY() + 1);
-    
+    ASSERT_EQ(settings.getYearHeight(), settings.getDecadeHeight() - 5);
+    ASSERT_EQ(settings.getYearX(), settings.getCenturyX() + 2);
+    ASSERT_EQ(settings.getYearY(), settings.getDecadeY() + 3);
+
 }
+
 
 
 // This file will be turn-off able in a future version of this project

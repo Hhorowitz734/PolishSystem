@@ -1,4 +1,5 @@
 //Header Files
+#include "../include/ITime.h"
 #include "../include/decade.h"
 #include "../include/year.h"
 #include "../include/century.h"
@@ -26,9 +27,9 @@ int main() {
     // Set FPS
     SetTargetFPS(60);
 
-    //OBJECTS
+    // FACTORIES + OBJECTS
     Century y2k(2000);
-    Decade twenty_tens(2010);
+
 
     // Main game loop
     while (!WindowShouldClose()) { 
@@ -37,7 +38,6 @@ int main() {
         BeginDrawing();
 
         y2k.display();
-        twenty_tens.display();
 
         ClearBackground(BLACK);
 

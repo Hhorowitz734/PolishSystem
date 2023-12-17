@@ -1,10 +1,31 @@
 #include "raylib.h"
 #include "../include/ITime.h"
 
-//Getter methods
+#include <vector>
+
+// Getter methods
 
 Rectangle ITime::getVisual() const { return visual; }
 
-//Raylib Functionalities
+// Setter methods
+void ITime::setLineColor(Color color) { lineColor = color; }
 
-void ITime::display() { DrawRectangleLinesEx(visual, 1, BLUE); }
+void ITime::setX(float newX) { x = newX; }
+void ITime::setY(float newY) { y = newY; }
+
+// Raylib Functionalities
+
+void ITime::display() { 
+
+    DrawRectangleLinesEx(visual, 1, lineColor); 
+
+    // Recursively display all sub times for a given time
+    std::vector<ITime*> subtimes = getSubTime();
+
+    if (subtimes.empty()) { return; } // Base case -> Year
+
+    for (ITime* subdivision : subtimes) {
+        subdivision->display();
+    }
+    
+    }

@@ -4,17 +4,17 @@
 int Settings::getHeight() const { return windowHeight; }
 int Settings::getWidth() const { return windowWidth; }
 
-int Settings::getCenturyHeight() const { return centuryHeight; }
-int Settings::getCenturyWidth() const { return centuryWidth; }
-int Settings::getCenturyX() const { return centuryX; }
-int Settings::getCenturyY() const { return centuryY; }
+float Settings::getCenturyHeight() const { return centuryHeight; }
+float Settings::getCenturyWidth() const { return centuryWidth; }
+float Settings::getCenturyX() const { return centuryX; }
+float Settings::getCenturyY() const { return centuryY; }
 
-int Settings::getDecadeHeight() const { return decadeHeight; }
-int Settings::getDecadeWidth() const { return decadeWidth; }
-int Settings::getDecadeX() const { return decadeX; }
-int Settings::getDecadeY() const { return decadeY; }
+float Settings::getDecadeHeight() const { return decadeHeight; }
+float Settings::getDecadeWidth() const { return decadeWidth; }
+float Settings::getDecadeX() const { return decadeX; }
+float Settings::getDecadeY() const { return decadeY; }
 
-int Settings::getYearHeight() const { return yearHeight; }
-int Settings::getYearWidth() const { return yearWidth; }
-int Settings::getYearX() const { return yearX; }
-int Settings::getYearY() const { return yearY; }
+float Settings::getYearHeight() const { return yearHeight; }
+float Settings::getYearWidth() const { return yearWidth; }
+float Settings::getYearX() const { return yearX; }
+float Settings::getYearY() const { return yearY; }

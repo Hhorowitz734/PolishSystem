@@ -22,6 +22,8 @@ public:
 
     virtual ~ITime() {}
 
+    //GETTER METHODS
+
     /**
      * @brief Returns the sub-array of a time. Ex: Decade -> years
      * 
@@ -40,6 +42,30 @@ public:
     */
     void display();
 
+    //SETTER METHODS
+
+    /**
+     * @brief Sets the x position of an ITime object
+     * 
+     * @param newX The new desired x position
+    */
+   void setX(float newX);
+
+   /**
+     * @brief Sets the y position of an ITime object
+     * 
+     * @param newX The new desired y position
+    */
+   void setY(float newY);
+
+
+    /**
+     * @brief Sets the color of an ITime object's border
+     * 
+     * @param color The Raylib color you would like to set
+    */
+    void setLineColor(Color color);
+
 protected:
 
     float width;
@@ -48,6 +74,9 @@ protected:
     float y;
 
     Rectangle visual;
+
+    Color lineColor = WHITE; //Default white
+    Color fillColor;
 
 };
 

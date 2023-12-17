@@ -26,70 +26,70 @@ public:
     /**
         * @brief Getter method for Century object height in Raylib
     */
-    int getCenturyHeight() const;
+    float getCenturyHeight() const;
 
     /**
      * @brief Getter method for Century object width in Raylib
      */
-    int getCenturyWidth() const;
+    float getCenturyWidth() const;
 
     /**
      * @brief Getter method for Century object's x position in Raylib
      */
-    int getCenturyX() const;
+    float getCenturyX() const;
 
     /**
      * @brief Getter method for Century object's y position in Raylib
      */
-    int getCenturyY() const; 
+    float getCenturyY() const; 
 
     /**
         * @brief Getter method for Decade object height in Raylib
     */
-    int getDecadeHeight() const;
+    float getDecadeHeight() const;
 
     /**
      * @brief Getter method for Decade object width in Raylib
      */
-    int getDecadeWidth() const;
+    float getDecadeWidth() const;
 
     /**
      * @brief Getter method for Decade object's x position in Raylib
      */
-    int getDecadeX() const;
+    float getDecadeX() const;
 
     /**
      * @brief Getter method for Decade object's y position in Raylib
      */
-    int getDecadeY() const; 
+    float getDecadeY() const; 
 
     /**
      * @brief Getter method for Year object height in Raylib
      * 
      * @return Height of a year object in the application window.
      */
-    int getYearHeight() const;
+    float getYearHeight() const;
 
     /**
      * @brief Getter method for Year object width in Raylib
      * 
      * @return Width of a year object in the application window.
      */
-    int getYearWidth() const;
+    float getYearWidth() const;
 
     /**
      * @brief Getter method for Year object's x position in Raylib
      * 
      * @return The x-coordinate of the year object's position in the application window.
      */
-    int getYearX() const;
+    float getYearX() const;
 
     /**
      * @brief Getter method for Year object's y position in Raylib
      * 
      * @return The y-coordinate of the year object's position in the application window.
      */
-    int getYearY() const;
+    float getYearY() const;
 
 
 private:
@@ -99,22 +99,22 @@ private:
     int windowHeight;
     
     //Century Settings for RayLib
-    int centuryWidth;
-    int centuryHeight;
-    int centuryX;
-    int centuryY;
+    float centuryWidth;
+    float centuryHeight;
+    float centuryX;
+    float centuryY;
 
     //Decade Settings for Raylib
-    int decadeWidth;
-    int decadeHeight;
-    int decadeX;
-    int decadeY;
+    float decadeWidth;
+    float decadeHeight;
+    float decadeX;
+    float decadeY;
 
     //Year Settings for RayLib
-    int yearWidth;
-    int yearHeight;
-    int yearX;
-    int yearY;
+    float yearWidth;
+    float yearHeight;
+    float yearX;
+    float yearY;
     
 
 
@@ -138,10 +138,11 @@ private:
     decadeX(centuryX),
     decadeY(centuryY + 2),
 
+    //YEAR
     yearWidth((centuryWidth - 10) / 10),
-    yearHeight(decadeHeight - 2),
-    yearX(centuryX + 1),
-    yearY(decadeY + 1)
+    yearHeight(decadeHeight - 5),
+    yearX(centuryX + 2),
+    yearY(decadeY + 3)
 
     {}
 
