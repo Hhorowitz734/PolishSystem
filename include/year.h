@@ -1,7 +1,9 @@
 #ifndef YEAR_H  
 #define YEAR_H
 
-class Year {
+#include "ITime.h"
+
+class Year : public ITime {
 
 public:
 
@@ -24,6 +26,9 @@ public:
      * @brief Destructor for Year that frees all memory
     */
     ~Year() = default;
+
+    std::vector<ITime*> getSubTime() const override;
+
 
 private:
 

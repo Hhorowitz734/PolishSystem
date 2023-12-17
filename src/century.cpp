@@ -1,3 +1,4 @@
+#include "../include/ITime.h"
 #include "../include/century.h"
 #include "../include/decade.h"
 #include "../include/year.h"
@@ -20,6 +21,14 @@ Century::Century(int century, bool using_century) {
 Century::Century(int start_year) : Century((start_year / 100) + 1, true) {}
 
 //Getter Methods
+
+std::vector<ITime*> Century::getSubTime() const {
+    std::vector<ITime*> result;
+    for (const Decade& decade : decades) {
+        result.push_back((ITime*)&decade);
+    }
+    return result;
+}
 
 std::vector<Year> Century::getYears() { return years; }
 

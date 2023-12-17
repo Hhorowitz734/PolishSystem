@@ -3,9 +3,11 @@
 
 #include "decade.h"
 #include "year.h"
+#include "ITime.h"
 #include <vector>
 
-class Century {
+class Century : public ITime {
+
 public:
     /**
      * @brief Constructs Century item from century (Ex: 19 -> 1800s)
@@ -36,6 +38,9 @@ public:
    * @returns The array of Year items in the century
   */
  std::vector<Year> getYears();
+
+
+ std::vector<ITime*> getSubTime() const override;
 
 private:
     std::vector<Decade> decades;

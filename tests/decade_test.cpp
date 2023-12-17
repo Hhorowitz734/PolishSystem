@@ -40,3 +40,22 @@ TEST(DecadeTest, CenturyStartYearConstructor) {
     
 }
 
+/**
+ * Testing Decade's getSubTime functionality
+*/
+TEST(DecadeTest, SubTimeTest) {
+
+    //Expected value of 1450s years
+    std::vector<int> expected_years = {1450, 1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459};
+
+    Decade fourteen_fifties(1450);
+
+    std::vector<ITime*> years = fourteen_fifties.getSubTime();
+
+    int j = 0;
+    for (ITime* y : years) {
+        Year* year = static_cast<Year*>(y);
+        ASSERT_EQ(year->getYear(), expected_years[j]);
+        j++;
+    }
+}

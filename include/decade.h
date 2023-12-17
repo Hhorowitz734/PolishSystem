@@ -2,9 +2,10 @@
 #define DECADE_H
 
 #include <vector>
+#include "ITime.h"
 #include "year.h"
 
-class Decade {
+class Decade : public ITime {
 
 
 public:
@@ -36,6 +37,9 @@ public:
      * @brief Destructor for Decade that frees all memory
     */
     ~Decade() = default;
+
+    std::vector<ITime*> getSubTime() const override;
+
 
 
 private:
