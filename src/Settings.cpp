@@ -13,3 +13,8 @@ int Settings::getDecadeHeight() const { return decadeHeight; }
 int Settings::getDecadeWidth() const { return decadeWidth; }
 int Settings::getDecadeX() const { return decadeX; }
 int Settings::getDecadeY() const { return decadeY; }
+
+int Settings::getYearHeight() const { return yearHeight; }
+int Settings::getYearWidth() const { return yearWidth; }
+int Settings::getYearX() const { return yearX; }
+int Settings::getYearY() const { return yearY; }

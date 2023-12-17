@@ -41,24 +41,13 @@ TEST_F(SettingsTest, CheckDecadeGetters) {
     
 }
 
-TEST_F(SettingsTest, CheckDecadeWidth) {
-    int expectedDecadeWidth = settings.getCenturyWidth() - 2;
-    ASSERT_EQ(settings.getDecadeWidth(), expectedDecadeWidth);
-}
+TEST_F(SettingsTest, CheckYearGetters) {
 
-TEST_F(SettingsTest, CheckDecadeHeight) {
-    int expectedDecadeHeight = (settings.getCenturyHeight() - 10) / 10;
-    ASSERT_EQ(settings.getDecadeHeight(), expectedDecadeHeight);
-}
-
-TEST_F(SettingsTest, CheckDecadeX) {
-    int expectedDecadeX = settings.getCenturyX();
-    ASSERT_EQ(settings.getDecadeX(), expectedDecadeX);
-}
-
-TEST_F(SettingsTest, CheckDecadeY) {
-    int expectedDecadeY = settings.getCenturyY() + 2;
-    ASSERT_EQ(settings.getDecadeY(), expectedDecadeY);
+    ASSERT_EQ(settings.getYearWidth(), (settings.getCenturyWidth() - 10) / 10);
+    ASSERT_EQ(settings.getYearHeight(), settings.getDecadeHeight() - 2);
+    ASSERT_EQ(settings.getYearX(), settings.getCenturyX() + 1);
+    ASSERT_EQ(settings.getYearY(), settings.getDecadeY() + 1);
+    
 }
 
 

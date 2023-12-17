@@ -63,6 +63,35 @@ public:
      */
     int getDecadeY() const; 
 
+    /**
+     * @brief Getter method for Year object height in Raylib
+     * 
+     * @return Height of a year object in the application window.
+     */
+    int getYearHeight() const;
+
+    /**
+     * @brief Getter method for Year object width in Raylib
+     * 
+     * @return Width of a year object in the application window.
+     */
+    int getYearWidth() const;
+
+    /**
+     * @brief Getter method for Year object's x position in Raylib
+     * 
+     * @return The x-coordinate of the year object's position in the application window.
+     */
+    int getYearX() const;
+
+    /**
+     * @brief Getter method for Year object's y position in Raylib
+     * 
+     * @return The y-coordinate of the year object's position in the application window.
+     */
+    int getYearY() const;
+
+
 private:
 
     //Window Settings for Raylib
@@ -80,6 +109,12 @@ private:
     int decadeHeight;
     int decadeX;
     int decadeY;
+
+    //Year Settings for RayLib
+    int yearWidth;
+    int yearHeight;
+    int yearX;
+    int yearY;
     
 
 
@@ -101,7 +136,12 @@ private:
     decadeWidth(centuryWidth - 2),
     decadeHeight((centuryHeight - 10) / 10),
     decadeX(centuryX),
-    decadeY(centuryY + 2)
+    decadeY(centuryY + 2),
+
+    yearWidth((centuryWidth - 10) / 10),
+    yearHeight(decadeHeight - 2),
+    yearX(centuryX + 1),
+    yearY(decadeY + 1)
 
     {}
 

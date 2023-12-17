@@ -7,7 +7,7 @@ protected:
 
 };
 
-TEST(YearTest, YearConstructor) {
+TEST_F(YearTest, YearConstructor) {
 
     Year y2k(2000);
 
@@ -18,7 +18,7 @@ TEST(YearTest, YearConstructor) {
 /**
  * Testing Year's getSubTime functionality
 */
-TEST(YearTest, SubTimeTest) {
+TEST_F(YearTest, SubTimeTest) {
 
     Year thirteen_thirty(1330);
 
