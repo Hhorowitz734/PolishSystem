@@ -28,6 +28,7 @@ int main() {
 
     //OBJECTS
     Century y2k(2000);
+    Decade twenty_tens(2010);
 
     // Main game loop
     while (!WindowShouldClose()) { 
@@ -36,6 +37,7 @@ int main() {
         BeginDrawing();
 
         y2k.display();
+        twenty_tens.display();
 
         ClearBackground(BLACK);
 

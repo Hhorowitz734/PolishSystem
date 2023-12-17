@@ -10,12 +10,13 @@
 //Settings Setup
 #include "../include/Settings.h"
 
-Settings& settings = Settings::GetInstance();
-
 //Constructors
 
 Century::Century(int century, bool using_century)
-    : ITime(settings.getCenturyX(), settings.getCenturyY(), settings.getCenturyWidth(), settings.getCenturyHeight()) {
+    : ITime(Settings::GetInstance().getCenturyX(), 
+    Settings::GetInstance().getCenturyY(), 
+    Settings::GetInstance().getCenturyWidth(), 
+    Settings::GetInstance().getCenturyHeight()) {
 
     for (int i = (century - 1) * 100; i < century * 100; i += 10) {
         Decade curr_decade(i);
