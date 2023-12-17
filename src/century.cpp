@@ -18,15 +18,25 @@ Century::Century(int century, bool using_century)
     Settings::GetInstance().getCenturyWidth(), 
     Settings::GetInstance().getCenturyHeight()) {
 
-    for (int i = (century - 1) * 100; i < century * 100; i += 10) {
-        Decade curr_decade(i);
+    int num_iters = 0;
 
+    for (int i = (century - 1) * 100; i < century * 100; i += 10) {
+
+        Decade* curr_decade = new Decade(i);
+
+        //Sets decade position properly
+        curr_decade->setY(Settings::GetInstance().getDecadeHeight() * num_iters + Settings::GetInstance().getDecadeY());
+        
         // Add the decade to the decades vector
         decades.push_back(curr_decade);
-        
+
         // Add individual years to the years vector
-        std::vector<Year> curr_decade_years = curr_decade.getYears();
+        std::vector<Year*> curr_decade_years = curr_decade->getYears();
         years.insert(years.end(), curr_decade_years.begin(), curr_decade_years.end());
+
+
+        num_iters++;
+    
     }
 }
 
@@ -36,12 +46,12 @@ Century::Century(int start_year) : Century((start_year / 100) + 1, true) {}
 
 std::vector<ITime*> Century::getSubTime() const {
     std::vector<ITime*> result;
-    for (const Decade& decade : decades) {
-        result.push_back((ITime*)&decade);
+    for (const Decade* decade : decades) {
+        result.push_back((ITime*)decade);
     }
     return result;
 }
 
-std::vector<Year> Century::getYears() { return years; }
+std::vector<Year*> Century::getYears() { return years; }
 
-std::vector<Decade> Century::getDecades() { return decades; }
+std::vector<Decade*> Century::getDecades() { return decades; }

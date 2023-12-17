@@ -30,14 +30,14 @@ public:
         * 
         * @returns The array of Decade items in the century
     */
-    std::vector<Decade> getDecades();
+    std::vector<Decade*> getDecades();
 
     /**
      * @brief Getter method fro years vector
      * 
      * @returns The array of Year items in the century
      */
-    std::vector<Year> getYears();
+    std::vector<Year*> getYears();
 
     /**
      * @brief Returns an array of ITime pointers to Decade objects
@@ -50,8 +50,8 @@ public:
     std::vector<ITime*> getSubTime() const override;
 
 private:
-    std::vector<Decade> decades;
-    std::vector<Year> years;
+    std::vector<Decade*> decades;
+    std::vector<Year*> years;
 
 };
 

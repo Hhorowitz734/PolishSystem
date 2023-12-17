@@ -15,11 +15,11 @@ TEST(DecadeTest, CenturyDecadeConstructor) {
 
     std::vector<int> expected_nineties = {1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999};
 
-    std::vector<Year> nineties_years_vec = nineties.getYears();
+    std::vector<Year*> nineties_years_vec = nineties.getYears();
 
     //Compares years of Year objects in Decade's years vector with expected value
     for (int i = 0; i < nineties_years_vec.size(); i++) {
-        ASSERT_EQ(nineties_years_vec[i].getYear(), expected_nineties[i]);
+        ASSERT_EQ(nineties_years_vec[i]->getYear(), expected_nineties[i]);
     }
 
 }
@@ -31,11 +31,11 @@ TEST(DecadeTest, CenturyStartYearConstructor) {
 
     std::vector<int> expected_eighties = {1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989};
 
-    std::vector<Year> eighties_years_vec = eighties.getYears();
+    std::vector<Year*> eighties_years_vec = eighties.getYears();
 
     //Compare values to ensure correctness
     for (int i = 0; i < eighties_years_vec.size(); i++) {
-        ASSERT_EQ(eighties_years_vec[i].getYear(), expected_eighties[i]);
+        ASSERT_EQ(eighties_years_vec[i]->getYear(), expected_eighties[i]);
     }
     
 }

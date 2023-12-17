@@ -31,7 +31,7 @@ public:
      * 
      * @returns years array for given Decade
     */
-    std::vector<Year> getYears();
+    std::vector<Year*> getYears();
 
     /**
      * @brief Destructor for Decade that frees all memory
@@ -51,7 +51,7 @@ public:
 
 private:
 
-    std::vector<Year> years;
+    std::vector<Year*> years;
 
     
 };

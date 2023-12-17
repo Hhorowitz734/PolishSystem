@@ -42,6 +42,20 @@ public:
     */
     void display();
 
+    /**
+     * @brief Returns the x position of an ITime object
+     * 
+     * @returns The x position of the object
+    */
+   float getX() const;
+
+   /**
+     * @brief Returns the y position of an ITime object
+     * 
+     * @returns The y position of the object
+    */
+   float getY() const;
+
     //SETTER METHODS
 
     /**

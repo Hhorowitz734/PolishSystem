@@ -24,7 +24,7 @@ TEST(CenturyTest, CenturyNumConstructor) {
     Century nineteenth_century(19, true);
 
     for (int i = 0; i < 100; i++) {
-        ASSERT_EQ(nineteenth_century.getYears()[i].getYear(), expected_years[i]);
+        ASSERT_EQ(nineteenth_century.getYears()[i]->getYear(), expected_years[i]);
     }
 }
 
@@ -42,7 +42,7 @@ TEST(CenturyTest, StartYearConstructor) {
     Century twenty_first_century(2000);
 
     for (int i = 0; i < 100; i++){
-        ASSERT_EQ(twenty_first_century.getYears()[i].getYear(), expected_years[i]);
+        ASSERT_EQ(twenty_first_century.getYears()[i]->getYear(), expected_years[i]);
     }
 }
 
@@ -66,8 +66,8 @@ TEST(CenturyTest, SubTimeTest) {
     int j = 0;
     for (ITime* d : decades) {
         Decade* decade = static_cast<Decade*>(d);
-        for (Year year: decade->getYears()) {
-            ASSERT_EQ(year.getYear(), expected_years[j]);
+        for (Year* year: decade->getYears()) {
+            ASSERT_EQ(year->getYear(), expected_years[j]);
             j++;
         }
     }
