@@ -10,28 +10,29 @@
 //Libraries
 #include "raylib.h"
 
+//Settings
+#include "../include/Settings.h"
+
 int main() {
 
-    Century y2k(2000);
+    Settings& settings = Settings::GetInstance();
+    
+    //Gets necessary values from settings
+    int width = settings.getWidth();
+    int height = settings.getHeight();
 
-    // Initialize Raylib window
-    int screenWidth = 800;
-    int screenHeight = 450;
-    InitWindow(screenWidth, screenHeight, "Century Visualizer");
+    InitWindow(width, height, "Polish System");
 
-     // Set FPS
+    // Set FPS
     SetTargetFPS(60);
 
     // Main game loop
-    while (!WindowShouldClose()) { // Detect window close button or ESC key
+    while (!WindowShouldClose()) { 
 
         // Start Drawing
         BeginDrawing();
 
         ClearBackground(BLACK);
-
-        // Draw the rectangle for the Century object
-        y2k.display();
 
         EndDrawing();
     }
