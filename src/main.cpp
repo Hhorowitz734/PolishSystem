@@ -60,6 +60,12 @@ int main() {
             }
         }
 
+        //NEXT STEPS -> Make 1 click show what is selected
+        // Make 2 clicks select decade
+        // Make 3 clicks select century
+        // Make 4 select year again
+        // Then, make them colorable
+
         ClearBackground(BLACK);
 
         EndDrawing();

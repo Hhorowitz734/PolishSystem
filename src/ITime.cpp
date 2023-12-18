@@ -24,8 +24,18 @@ void ITime::setY(float newY) {
 }
 
 void ITime::setIsDisplayed(bool displayed) { isDisplayed = displayed; }
-
 void ITime::toggleDisplayed() { isDisplayed = !isDisplayed; }
+
+bool ITime::getIsSelected() const { return isSelected; }
+void ITime::setIsSelected(bool newSelected) { 
+    isSelected = newSelected;
+    if (isSelected) { setLineColor(RED); }
+    else { 
+        setLineColor(WHITE);
+        display(); //Redisplay it to show it as default
+    }
+}
+void ITime::toggleIsSelected() { setIsSelected(!isSelected); }
 
 // Raylib Functionalities
 
@@ -43,3 +53,6 @@ void ITime::display() {
     }
     
 }
+
+ITime* ITime::getParent() { return parent; }
+void ITime::setParent(ITime* parent_elem) const { parent_elem = parent; } // Move this to the constructor in the future

@@ -90,9 +90,16 @@ public:
     /**
      * @brief Getter method for Year object's y position in Raylib
      * 
-     * @return The y-coordinate of the year object's position in the application window.
+     * @returns The y-coordinate of the year object's position in the application window.
      */
     float getYearY() const;
+
+    /**
+     * @brief Gets the currently selected ITime* element
+     * 
+     * @returns The ITime* currently selected
+    */
+    ITime* getSelectedITime() const;
 
     /**
      * @brief Sets a new SelectedITime, which is used to know what the currently selected time division is
@@ -126,8 +133,9 @@ private:
     float yearX;
     float yearY;
 
-    // Currently selected ITime element
-    ITime* selectedITime;
+    // Selectomg ITime elements
+    ITime* selectedITime = nullptr;
+    ITime* lastSelectedITime = nullptr;
     Color selectedColor = RED; //Replace this with some sort of element to represent country info n stuff (define a struct in colorselector)
     
 

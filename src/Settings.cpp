@@ -21,4 +21,32 @@ float Settings::getYearX() const { return yearX; }
 float Settings::getYearY() const { return yearY; }
 
 //Setter Methods
-void Settings::setSelectedITime(ITime* newSelect) { selectedITime = newSelect; }
+ITime* Settings::getSelectedITime() const { return selectedITime; }
+
+void Settings::setSelectedITime(ITime* newSelect) {
+    // If the new selection is the same as the current selection, toggle it.
+    if (selectedITime == newSelect) {
+        if (selectedITime != nullptr) {
+            selectedITime->toggleIsSelected();
+            // If it gets deselected, set both to nullptr.
+            if (!selectedITime->getIsSelected()) {
+                selectedITime = nullptr;
+                lastSelectedITime = nullptr;
+            }
+        }
+    } else {
+        // If the new selection is different, deselect the current one if it exists.
+        if (selectedITime != nullptr) {
+            selectedITime->setIsSelected(false);
+        }
+
+        // Update the selection.
+        lastSelectedITime = selectedITime;
+        selectedITime = newSelect;
+
+        // Select the new one if it's not nullptr.
+        if (selectedITime != nullptr) {
+            selectedITime->setIsSelected(true);
+        }
+    }
+}

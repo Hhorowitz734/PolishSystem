@@ -92,9 +92,48 @@ public:
     */
    void toggleDisplayed();
 
+    /**
+     * @brief Sets the "selected" property of the ITime
+     * 
+     * @param newSelected The new value of isSelected
+     */
+    void setIsSelected(bool newSelected);
+
+    /**
+     * @brief Toggled the "selected" property of ITime
+     */
+    void toggleIsSelected();
+
+    /**
+     * @brief Returns the status of the selection
+     * 
+     * @returns True if the boolean is selected, False if the boolean is not selected
+    */
+    bool getIsSelected() const;
+
+    /**
+     * @brief Gets the parent element of the ITime* element
+     * 
+     * @returns The parent element of the current ITime*
+     */
+    ITime* getParent();
+
+    /**
+     * @brief Sets parent element of ITime*. 
+     * 
+     * @note SHOULD NOT BE USED EXCEPT IN A CONSTRUCTOR. A PARENT ELEMENT SHOULD NOT BE CHANGING.
+     * 
+     * @param parent_elem The parent (should be the decade if year etc)
+    */
+    void setParent(ITime* parent_elem) const;
+
 protected:
 
+    ITime* parent;
+
     bool isDisplayed = false;
+
+    bool isSelected = false;
 
     float width;
     float height;
@@ -105,6 +144,8 @@ protected:
 
     Color lineColor = WHITE; //Default white
     Color fillColor;
+
+    Color defaultLineColor = WHITE;
 
 };
 

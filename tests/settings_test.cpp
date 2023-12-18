@@ -52,6 +52,7 @@ TEST_F(SettingsTest, CheckYearGetters) {
 
 
 
+
 // This file will be turn-off able in a future version of this project
 // I want to be able to test all the settings methods, but changing these
 // Tests any time you want to make a change to program settings is annoying
