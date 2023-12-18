@@ -80,7 +80,21 @@ public:
     */
     void setLineColor(Color color);
 
+    /**
+     * @brief Sets the state of the object's display (true -> displayed)
+     * 
+     * @param displayed The boolean choice for the value
+    */
+   void setIsDisplayed(bool displayed);
+
+    /**
+     * @brief Toggles the state of the object's display value
+    */
+   void toggleDisplayed();
+
 protected:
+
+    bool isDisplayed = false;
 
     float width;
     float height;

@@ -23,11 +23,15 @@ void ITime::setY(float newY) {
     visual.y = y;
 }
 
+void ITime::setIsDisplayed(bool displayed) { isDisplayed = displayed; }
+
+void ITime::toggleDisplayed() { isDisplayed = !isDisplayed; }
+
 // Raylib Functionalities
 
 void ITime::display() { 
 
-    DrawRectangleLinesEx(visual, 1, lineColor); 
+    if (isDisplayed) { DrawRectangleLinesEx(visual, 1, lineColor); }
 
     // Recursively display all sub times for a given time
     std::vector<ITime*> subtimes = getSubTime();
@@ -38,4 +42,4 @@ void ITime::display() {
         subdivision->display();
     }
     
-    }
+}

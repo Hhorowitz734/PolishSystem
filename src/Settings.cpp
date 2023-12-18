@@ -1,4 +1,5 @@
 #include "../include/Settings.h"
+#include "../include/ITime.h"
 
 //Getter Methods
 int Settings::getHeight() const { return windowHeight; }
@@ -18,3 +19,6 @@ float Settings::getYearHeight() const { return yearHeight; }
 float Settings::getYearWidth() const { return yearWidth; }
 float Settings::getYearX() const { return yearX; }
 float Settings::getYearY() const { return yearY; }
+
+//Setter Methods
+void Settings::setSelectedITime(ITime* newSelect) { selectedITime = newSelect; }

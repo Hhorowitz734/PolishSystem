@@ -36,7 +36,9 @@ Century::Century(int century, bool using_century)
         // Sets proper positions for all years
         for (int j = 0; j < 10; j++){
             curr_decade_years[j]->setX(Settings::GetInstance().getYearX() + Settings::GetInstance().getYearWidth() * j + 1);
-            curr_decade_years[j]->setY(Settings::GetInstance().getDecadeHeight() * num_iters + Settings::GetInstance().getDecadeY() + 2);
+            curr_decade_years[j]->setY(Settings::GetInstance().getDecadeHeight() * num_iters + Settings::GetInstance().getDecadeY() + 3);
+
+            curr_decade_years[j]->toggleDisplayed(); //Display years only at start
 
             years.push_back(curr_decade_years[j]);
         }

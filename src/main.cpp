@@ -32,6 +32,7 @@ int main() {
 
     // FACTORIES + OBJECTS
     Century y2k(2000);
+    std::vector<Year*> y2k_years = y2k.getYears();
 
     //SIDE PANEL
     ColorSelector usa(RED, "America");
@@ -45,6 +46,19 @@ int main() {
 
         y2k.display();
         usa.display();
+
+        //If the mouse is pressed, figures out what year it is pressed on
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) { 
+
+            Vector2 mousePos = GetMousePosition();
+
+            for (Year* y : y2k_years) {
+                if (CheckCollisionPointRec(mousePos, y->getVisual())) { 
+                    settings.setSelectedITime(y); 
+                    break;
+                }
+            }
+        }
 
         ClearBackground(BLACK);
 

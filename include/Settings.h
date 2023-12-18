@@ -1,3 +1,6 @@
+// Includes
+#include "ITime.h"
+
 /**
  * @brief The Settings class will be a singleton to manage the visual settings of the program
 */
@@ -91,6 +94,13 @@ public:
      */
     float getYearY() const;
 
+    /**
+     * @brief Sets a new SelectedITime, which is used to know what the currently selected time division is
+     * 
+     * @param newSelect The new ITime* that is selected
+    */
+   void setSelectedITime(ITime* newSelect);
+
 
 private:
 
@@ -115,8 +125,11 @@ private:
     float yearHeight;
     float yearX;
     float yearY;
-    
 
+    // Currently selected ITime element
+    ITime* selectedITime;
+    Color selectedColor = RED; //Replace this with some sort of element to represent country info n stuff (define a struct in colorselector)
+    
 
     /**
      * @brief Use this function to set the setting values
