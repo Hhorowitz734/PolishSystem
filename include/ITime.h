@@ -116,7 +116,7 @@ public:
      * 
      * @returns The parent element of the current ITime*
      */
-    ITime* getParent();
+    ITime* getParent() const;
 
     /**
      * @brief Sets parent element of ITime*. 
@@ -125,11 +125,11 @@ public:
      * 
      * @param parent_elem The parent (should be the decade if year etc)
     */
-    void setParent(ITime* parent_elem) const;
+    void setParent(ITime* parent_elem);
 
 protected:
 
-    ITime* parent;
+    ITime* parent = nullptr;
 
     bool isDisplayed = false;
 

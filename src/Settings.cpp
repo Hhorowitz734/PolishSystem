@@ -24,29 +24,32 @@ float Settings::getYearY() const { return yearY; }
 ITime* Settings::getSelectedITime() const { return selectedITime; }
 
 void Settings::setSelectedITime(ITime* newSelect) {
-    // If the new selection is the same as the current selection, toggle it.
-    if (selectedITime == newSelect) {
-        if (selectedITime != nullptr) {
-            selectedITime->toggleIsSelected();
-            // If it gets deselected, set both to nullptr.
-            if (!selectedITime->getIsSelected()) {
-                selectedITime = nullptr;
-                lastSelectedITime = nullptr;
-            }
-        }
-    } else {
-        // If the new selection is different, deselect the current one if it exists.
-        if (selectedITime != nullptr) {
-            selectedITime->setIsSelected(false);
-        }
 
-        // Update the selection.
-        lastSelectedITime = selectedITime;
-        selectedITime = newSelect;
+    if (newSelect == nullptr) { return; } //If newSelect doesn't exist, does nothing
 
-        // Select the new one if it's not nullptr.
-        if (selectedITime != nullptr) {
-            selectedITime->setIsSelected(true);
-        }
+    ITime* curr = newSelect;
+    bool parentSelected = false;
+    while (curr != nullptr) {
+        std::cout << curr << std::endl;
+        parentSelected = curr->getIsSelected();
+        if (parentSelected) { break; }
+        curr = curr->getParent();
     }
+
+    if (parentSelected) { newSelect = curr->getParent(); } //If newSelect is already selected, gets its parent
+
+    /*
+    // THIS CODE WAS USED FOR TESTING WHEN DEVELOPING THIS RECURSIVE UPWARD
+    // STRATEGY. YOU CAN USE IT AGAIN TO TEST THIS CODE IN THE FUTURE
+
+    std::cout << "Selected: " << newSelect << std::endl;
+    std::cout << "Previously: " << selectedITime << std::endl;
+    std::cout << "Selected's Parent: " << newSelect->getParent() << std::endl;
+    std::cout << '\n';
+
+    */
+    if (selectedITime != nullptr) { selectedITime->toggleIsSelected(); } 
+    newSelect->toggleIsSelected();
+    selectedITime = newSelect;
 }
+

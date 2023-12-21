@@ -135,7 +135,6 @@ private:
 
     // Selectomg ITime elements
     ITime* selectedITime = nullptr;
-    ITime* lastSelectedITime = nullptr;
     Color selectedColor = RED; //Replace this with some sort of element to represent country info n stuff (define a struct in colorselector)
     
 

@@ -29,10 +29,21 @@ void ITime::toggleDisplayed() { isDisplayed = !isDisplayed; }
 bool ITime::getIsSelected() const { return isSelected; }
 void ITime::setIsSelected(bool newSelected) { 
     isSelected = newSelected;
-    if (isSelected) { setLineColor(RED); }
+    if (isSelected) { 
+        setIsDisplayed(true); // This is important if we are dealing with a decade or century
+        setLineColor(RED); 
+    }
     else { 
         setLineColor(WHITE);
         display(); //Redisplay it to show it as default
+
+        //If we are dealing with a decade or a century
+        //We no longer need it to be displayed
+        if (getSubTime().size() != 0) { 
+            setLineColor(BLACK);
+            display();
+            setIsDisplayed(false); 
+        } 
     }
 }
 void ITime::toggleIsSelected() { setIsSelected(!isSelected); }
@@ -54,5 +65,5 @@ void ITime::display() {
     
 }
 
-ITime* ITime::getParent() { return parent; }
-void ITime::setParent(ITime* parent_elem) const { parent_elem = parent; } // Move this to the constructor in the future
+ITime* ITime::getParent() const { return parent; }
+void ITime::setParent(ITime* parent_elem) { parent = parent_elem; } // Move this to the constructor in the future

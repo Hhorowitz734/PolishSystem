@@ -24,8 +24,11 @@ Century::Century(int century, bool using_century)
 
         Decade* curr_decade = new Decade(i);
 
-        //Sets decade position properly
+        // Sets decade position properly
         curr_decade->setY(Settings::GetInstance().getDecadeHeight() * num_iters + Settings::GetInstance().getDecadeY() + 1);
+
+        // Sets the parent element of the decade
+        curr_decade->setParent(this);
         
         // Add the decade to the decades vector
         decades.push_back(curr_decade);
@@ -39,6 +42,7 @@ Century::Century(int century, bool using_century)
             curr_decade_years[j]->setY(Settings::GetInstance().getDecadeHeight() * num_iters + Settings::GetInstance().getDecadeY() + 3);
 
             curr_decade_years[j]->toggleDisplayed(); //Display years only at start
+            curr_decade_years[j]->setParent(curr_decade);
 
             years.push_back(curr_decade_years[j]);
         }
