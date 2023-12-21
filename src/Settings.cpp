@@ -30,7 +30,6 @@ void Settings::setSelectedITime(ITime* newSelect) {
     ITime* curr = newSelect;
     bool parentSelected = false;
     while (curr != nullptr) {
-        std::cout << curr << std::endl;
         parentSelected = curr->getIsSelected();
         if (parentSelected) { break; }
         curr = curr->getParent();
