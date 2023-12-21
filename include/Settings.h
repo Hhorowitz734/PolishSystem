@@ -106,37 +106,58 @@ public:
      * 
      * @param newSelect The new ITime* that is selected
     */
-   void setSelectedITime(ITime* newSelect);
+    void setSelectedITime(ITime* newSelect);
+
+    /**
+     * @brief Gets the ColorPanel's x position in Raylib
+     * 
+     * @returns The ColorPanel's x position in Raylib
+    */
+    float getColorPanelX() const;
+
+    /**
+     * @brief Gets the ColorPanel's y position in Raylib
+     * 
+     * @returns The ColorPanel's y position in Raylib
+    */
+    float getColorPanelY() const;
 
 
 private:
 
-    //Window Settings for Raylib
+    // Window Settings for Raylib
     int windowWidth;
     int windowHeight;
     
-    //Century Settings for RayLib
+    //C entury Settings for RayLib
     float centuryWidth;
     float centuryHeight;
     float centuryX;
     float centuryY;
 
-    //Decade Settings for Raylib
+    // Decade Settings for Raylib
     float decadeWidth;
     float decadeHeight;
     float decadeX;
     float decadeY;
 
-    //Year Settings for RayLib
+    // Year Settings for RayLib
     float yearWidth;
     float yearHeight;
     float yearX;
     float yearY;
 
-    // Selectomg ITime elements
+    // Selecting ITime elements
     ITime* selectedITime = nullptr;
     Color selectedColor = RED; //Replace this with some sort of element to represent country info n stuff (define a struct in colorselector)
     
+    // Settings for Color Panel
+    /**
+     * Do not be afraid to modify this to just a panel
+     * In a future rendition of this code
+    */
+    float colorPanelX;
+    float colorPanelY;
 
     /**
      * @brief Use this function to set the setting values
@@ -162,7 +183,11 @@ private:
     yearWidth((centuryWidth - 10) / 10),
     yearHeight(decadeHeight - 5),
     yearX(centuryX + 2),
-    yearY(decadeY + 3)
+    yearY(decadeY + 3),
+
+    //COLOR PANEL
+    colorPanelX(100),
+    colorPanelY(200)
 
     {}
 

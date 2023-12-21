@@ -5,11 +5,11 @@
 // Libraries
 #include "raylib.h"
 
-ColorSelector::ColorSelector(Color color, std::string country) : color(color), 
-                                                                country(country),
-                                                                x(100),
-                                                                y(200),
-                                                                box{x, y, 20, 20} {}
+ColorSelector::ColorSelector(std::string country, Color color, float x, float y) : color(color), 
+                                                                                country(country),
+                                                                                x(x),
+                                                                                y(y),
+                                                                                box{x, y, 20, 20} {}
 
 void ColorSelector::display() {
 

@@ -20,6 +20,9 @@ float Settings::getYearWidth() const { return yearWidth; }
 float Settings::getYearX() const { return yearX; }
 float Settings::getYearY() const { return yearY; }
 
+float Settings::getColorPanelX() const { return colorPanelX; }
+float Settings::getColorPanelY() const { return colorPanelY; }
+
 //Setter Methods
 ITime* Settings::getSelectedITime() const { return selectedITime; }
 
@@ -48,7 +51,7 @@ void Settings::setSelectedITime(ITime* newSelect) {
 
     */
     if (selectedITime != nullptr) { selectedITime->toggleIsSelected(); } 
-    newSelect->toggleIsSelected();
+    if (newSelect != nullptr) { newSelect->toggleIsSelected(); }
     selectedITime = newSelect;
 }
 

@@ -5,7 +5,7 @@
 #include "../include/century.h"
 
 //Panel Headers
-#include "../include/panel/colorselector.h"
+#include "../include/panel/colorpanel.h"
 
 //C++ Tools
 #include <vector>
@@ -35,7 +35,8 @@ int main() {
     std::vector<Year*> y2k_years = y2k.getYears();
 
     //SIDE PANEL
-    ColorSelector usa(RED, "America");
+    std::vector<std::string> countries = {"America", "China", "Russia", "Djibouti"};
+    ColorPanel colorpanel(countries);
 
 
     // Main game loop
@@ -45,7 +46,7 @@ int main() {
         BeginDrawing();
 
         y2k.display();
-        usa.display();
+        colorpanel.display();
 
         //If the mouse is pressed, figures out what year it is pressed on
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) { 
