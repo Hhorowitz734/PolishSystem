@@ -25,7 +25,7 @@ ColorPanel::ColorPanel(const std::vector<std::string>& countries) {
             static_cast<unsigned char>(GetRandomValue(0, 255)),
             static_cast<unsigned char>(GetRandomValue(0, 255)), 
             static_cast<unsigned char>(GetRandomValue(0, 255)), 
-            255 };
+            150 };
         
         //Creates a new ColorSelector for the country
         ColorSelector* curr = new ColorSelector(country, 
@@ -45,3 +45,5 @@ ColorPanel::ColorPanel(const std::vector<std::string>& countries) {
 void ColorPanel::display() {
     for (ColorSelector* selector : selectors) { selector->display(); }
 }
+
+std::vector<ColorSelector*> ColorPanel::getSelectors() const { return selectors; }

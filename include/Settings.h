@@ -122,6 +122,18 @@ public:
     */
     float getColorPanelY() const;
 
+    /**
+     * @brief Sets the currently selected color
+    */
+    void setSelectedColor(Color newColor);
+
+    /**
+     * @brief Getter method for the currently selected color
+     * 
+     * @returns The raylib Color object of the currently selected color
+    */
+    Color getSelectedColor() const;
+
 
 private:
 
@@ -151,6 +163,7 @@ private:
     ITime* selectedITime = nullptr;
     Color selectedColor = RED; //Replace this with some sort of element to represent country info n stuff (define a struct in colorselector)
     
+
     // Settings for Color Panel
     /**
      * Do not be afraid to modify this to just a panel

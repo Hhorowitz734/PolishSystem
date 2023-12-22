@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 #include "../include/Settings.h"
+#include "../include/panel/colorselector.h"
 
 class SettingsTest : public ::testing::Test {
 protected:
@@ -50,6 +51,21 @@ TEST_F(SettingsTest, CheckYearGetters) {
 
 }
 
+
+TEST_F(SettingsTest, CheckSelectorFeatures) {
+
+    //Sample color selector being clicked
+    ColorSelector* usa = new ColorSelector("USA", BLUE, 0, 0);
+    settings.setSelectedColor(usa->getColor());
+
+    //Blue is {0, 121, 241, 255}
+    Color settings_color = settings.getSelectedColor();
+    ASSERT_EQ(settings_color.r, 0);
+    ASSERT_EQ(settings_color.g, 121);
+    ASSERT_EQ(settings_color.b, 241);
+    ASSERT_EQ(settings_color.a, 255);
+    
+}
 
 
 

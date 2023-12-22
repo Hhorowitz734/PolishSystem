@@ -23,8 +23,14 @@ float Settings::getYearY() const { return yearY; }
 float Settings::getColorPanelX() const { return colorPanelX; }
 float Settings::getColorPanelY() const { return colorPanelY; }
 
-//Setter Methods
 ITime* Settings::getSelectedITime() const { return selectedITime; }
+Color Settings::getSelectedColor() const { return selectedColor; }
+
+//Setter Methods
+void Settings::setSelectedColor(Color newColor) { 
+    selectedColor = newColor; 
+    if (selectedITime) { selectedITime->setFillColor(selectedColor); }
+    }
 
 void Settings::setSelectedITime(ITime* newSelect) {
 
@@ -54,4 +60,3 @@ void Settings::setSelectedITime(ITime* newSelect) {
     if (newSelect != nullptr) { newSelect->toggleIsSelected(); }
     selectedITime = newSelect;
 }
-

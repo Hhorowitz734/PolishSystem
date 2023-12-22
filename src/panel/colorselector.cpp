@@ -13,11 +13,21 @@ ColorSelector::ColorSelector(std::string country, Color color, float x, float y)
 
 void ColorSelector::display() {
 
-    //Draw box
+    // Draw box
     DrawRectangleRec(box, color);
     DrawRectangleLinesEx(box, 1, WHITE); 
 
-    //Draw text
+    // Draw text
     DrawText(country.c_str(), x + 20 + 20, y, 20, WHITE);
 
 }
+
+void ColorSelector::setBrightness(int newBrightness) {
+    //Creates a temp color, modifies it, and sets this.color to it
+    Color temp_color = color;
+    temp_color.a = newBrightness;
+    color = temp_color;
+}
+
+Rectangle ColorSelector::getVisual() const { return box; }
+Color ColorSelector::getColor() const { return color; }

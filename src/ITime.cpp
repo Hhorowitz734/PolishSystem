@@ -3,6 +3,8 @@
 
 #include <vector>
 
+#include <iostream>
+
 // Getter methods
 
 Rectangle ITime::getVisual() const { return visual; }
@@ -57,7 +59,16 @@ void ITime::display() {
     // Recursively display all sub times for a given time
     std::vector<ITime*> subtimes = getSubTime();
 
-    if (subtimes.empty()) { return; } // Base case -> Year
+    if (subtimes.empty()) { // Base case -> Year
+        Rectangle fillRect = {
+            x + 1,
+            y + 1,
+            width - 2,
+            height - 2
+        };
+        DrawRectangleRec(fillRect, fillColor);
+        return;
+    } 
 
     for (ITime* subdivision : subtimes) {
         subdivision->display();
@@ -67,3 +78,16 @@ void ITime::display() {
 
 ITime* ITime::getParent() const { return parent; }
 void ITime::setParent(ITime* parent_elem) { parent = parent_elem; } // Move this to the constructor in the future
+
+void ITime::setFillColor(Color newColor) { 
+
+    fillColor = newColor;
+
+    ITime* curr = this;
+
+    if (curr->getSubTime().empty()) { return; } //Base case -> Year
+
+    for (ITime* subTime : curr->getSubTime()) { //Recursive case
+        subTime->setFillColor(fillColor);
+    }
+ }

@@ -127,6 +127,13 @@ public:
     */
     void setParent(ITime* parent_elem);
 
+    /**
+     * @brief Sets ITime and children (if applicable to a certain color)
+     * 
+     * @param newColor The color that the ITime will be set to (should be from settings)
+    */
+   void setFillColor(Color newColor);
+
 protected:
 
     ITime* parent = nullptr;
@@ -143,7 +150,7 @@ protected:
     Rectangle visual;
 
     Color lineColor = WHITE; //Default white
-    Color fillColor;
+    Color fillColor = BLACK;
 
     Color defaultLineColor = WHITE;
 

@@ -37,6 +37,7 @@ int main() {
     //SIDE PANEL
     std::vector<std::string> countries = {"America", "China", "Russia", "Djibouti"};
     ColorPanel colorpanel(countries);
+    std::vector<ColorSelector*> selectors = colorpanel.getSelectors();
 
 
     // Main game loop
@@ -52,6 +53,8 @@ int main() {
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) { 
 
             Vector2 mousePos = GetMousePosition();
+            
+            //Iterates over Years
 
             for (Year* y : y2k_years) {
                 if (CheckCollisionPointRec(mousePos, y->getVisual())) { 
@@ -59,6 +62,21 @@ int main() {
                     break;
                 }
             }
+
+            //Iterates over ColorPanel clickables
+            for (ColorSelector* selector : selectors) {
+                if (CheckCollisionPointRec(mousePos, selector->getVisual())) {
+                    selector->setBrightness(255);
+                    settings.setSelectedColor(selector->getColor());
+                }
+            }
+
+            /**
+             * I need to make an IClickable interface
+             * For clickable objects to better handle interactions
+             * And take responsibility for handling that off 
+             * the settings classes
+            */
         }
 
         //NEXT STEPS -> Make 1 click show what is selected
