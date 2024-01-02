@@ -5,17 +5,17 @@
 // Libraries
 #include "raylib.h"
 
-ColorSelector::ColorSelector(std::string country, Color color, float x, float y) : color(color), 
-                                                                                country(country),
-                                                                                x(x),
-                                                                                y(y),
-                                                                                box{x, y, 20, 20} {}
+ColorSelector::ColorSelector(std::string country, Color color, float x, float y) 
+    : IClickable(x, y, 20, 20), // Initializing the IClickable base class
+      color(color), 
+      country(country) {}
 
+      
 void ColorSelector::display() {
 
     // Draw box
-    DrawRectangleRec(box, color);
-    DrawRectangleLinesEx(box, 1, WHITE); 
+    DrawRectangleRec(visual, color);
+    DrawRectangleLinesEx(visual, 1, WHITE); 
 
     // Draw text
     DrawText(country.c_str(), x + 20 + 20, y, 20, WHITE);
@@ -29,5 +29,5 @@ void ColorSelector::setBrightness(int newBrightness) {
     color = temp_color;
 }
 
-Rectangle ColorSelector::getVisual() const { return box; }
+Rectangle ColorSelector::getVisual() const { return visual; }
 Color ColorSelector::getColor() const { return color; }

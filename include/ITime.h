@@ -4,7 +4,9 @@
 #include <vector>
 #include "raylib.h"
 
-class ITime {
+#include "IClickable.h"
+
+class ITime : public IClickable {
 
 public:
 
@@ -17,8 +19,7 @@ public:
      * @param height The height of the drawn object
     */
     ITime(float x, float y, float width, float height)
-        : x(x), y(y), width(width), height(height),
-          visual{x, y, width, height} {}
+        : IClickable(x, y, width, height) {}
 
     virtual ~ITime() {}
 
@@ -40,38 +41,9 @@ public:
     /**
      * @brief Displays the ITime object on the raylib window
     */
-    void display();
-
-    /**
-     * @brief Returns the x position of an ITime object
-     * 
-     * @returns The x position of the object
-    */
-   float getX() const;
-
-   /**
-     * @brief Returns the y position of an ITime object
-     * 
-     * @returns The y position of the object
-    */
-   float getY() const;
+    void display() override;
 
     //SETTER METHODS
-
-    /**
-     * @brief Sets the x position of an ITime object
-     * 
-     * @param newX The new desired x position
-    */
-   void setX(float newX);
-
-   /**
-     * @brief Sets the y position of an ITime object
-     * 
-     * @param newX The new desired y position
-    */
-   void setY(float newY);
-
 
     /**
      * @brief Sets the color of an ITime object's border
@@ -132,7 +104,7 @@ public:
      * 
      * @param newColor The color that the ITime will be set to (should be from settings)
     */
-   void setFillColor(Color newColor);
+   void setFillColor(Color newColor) override;
 
 protected:
 
@@ -141,13 +113,6 @@ protected:
     bool isDisplayed = false;
 
     bool isSelected = false;
-
-    float width;
-    float height;
-    float x;
-    float y;
-
-    Rectangle visual;
 
     Color lineColor = WHITE; //Default white
     Color fillColor = BLACK;

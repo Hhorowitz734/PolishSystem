@@ -5,7 +5,10 @@
 // C++ Utilities
 #include <string>
 
-class ColorSelector {
+// Includes
+#include "../IClickable.h"
+
+class ColorSelector : public IClickable {
 
 public:
 
@@ -22,7 +25,7 @@ public:
     /**
      * @brief Displays the color selector on the panel as desired
     */
-    void display();
+    void display() override;
 
     /**
      * @brief Sets the brightness of the color
@@ -49,10 +52,5 @@ private:
     std::string country;
 
     Color color;
-
-    float x;
-    float y;
-
-    Rectangle box;
 
 };

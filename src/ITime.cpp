@@ -9,21 +9,8 @@
 
 Rectangle ITime::getVisual() const { return visual; }
 
-float ITime::getX() const { return x; }
-float ITime::getY() const { return y; }
-
 // Setter methods
 void ITime::setLineColor(Color color) { lineColor = color; }
-
-void ITime::setX(float newX) { 
-    x = newX; 
-    visual.x = x;
-}
-
-void ITime::setY(float newY) { 
-    y = newY;
-    visual.y = y;
-}
 
 void ITime::setIsDisplayed(bool displayed) { isDisplayed = displayed; }
 void ITime::toggleDisplayed() { isDisplayed = !isDisplayed; }
