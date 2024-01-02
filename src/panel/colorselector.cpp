@@ -10,7 +10,7 @@ ColorSelector::ColorSelector(std::string country, Color color, float x, float y)
       color(color), 
       country(country) {}
 
-      
+
 void ColorSelector::display() {
 
     // Draw box
@@ -29,5 +29,4 @@ void ColorSelector::setBrightness(int newBrightness) {
     color = temp_color;
 }
 
-Rectangle ColorSelector::getVisual() const { return visual; }
 Color ColorSelector::getColor() const { return color; }

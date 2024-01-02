@@ -7,13 +7,8 @@
 
 // Getter methods
 
-Rectangle ITime::getVisual() const { return visual; }
-
 // Setter methods
 void ITime::setLineColor(Color color) { lineColor = color; }
-
-void ITime::setIsDisplayed(bool displayed) { isDisplayed = displayed; }
-void ITime::toggleDisplayed() { isDisplayed = !isDisplayed; }
 
 bool ITime::getIsSelected() const { return isSelected; }
 void ITime::setIsSelected(bool newSelected) { 

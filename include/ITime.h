@@ -34,11 +34,6 @@ public:
     virtual std::vector<ITime*> getSubTime() const = 0;
 
     /**
-     * @brief Getter method for the Rectangle object that represents the ITime
-    */
-    Rectangle getVisual() const;
-
-    /**
      * @brief Displays the ITime object on the raylib window
     */
     void display() override;
@@ -53,35 +48,23 @@ public:
     void setLineColor(Color color);
 
     /**
-     * @brief Sets the state of the object's display (true -> displayed)
-     * 
-     * @param displayed The boolean choice for the value
-    */
-   void setIsDisplayed(bool displayed);
-
-    /**
-     * @brief Toggles the state of the object's display value
-    */
-   void toggleDisplayed();
-
-    /**
      * @brief Sets the "selected" property of the ITime
      * 
      * @param newSelected The new value of isSelected
      */
-    void setIsSelected(bool newSelected);
+    void setIsSelected(bool newSelected) override;
 
     /**
      * @brief Toggled the "selected" property of ITime
      */
-    void toggleIsSelected();
+    void toggleIsSelected() override;
 
     /**
      * @brief Returns the status of the selection
      * 
      * @returns True if the boolean is selected, False if the boolean is not selected
     */
-    bool getIsSelected() const;
+    bool getIsSelected() const override;
 
     /**
      * @brief Gets the parent element of the ITime* element
@@ -109,8 +92,6 @@ public:
 protected:
 
     ITime* parent = nullptr;
-
-    bool isDisplayed = false;
 
     bool isSelected = false;
 
